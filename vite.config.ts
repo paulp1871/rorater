@@ -8,4 +8,10 @@ export default defineConfig({
     react(),
     babel({ presets: [reactCompilerPreset()] })
   ],
+  server: {
+    proxy: {
+      // Forward API calls to the Express server so the browser stays on one origin (no CORS).
+      '/api': 'http://localhost:3000',
+    },
+  },
 })
