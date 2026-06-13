@@ -107,6 +107,10 @@ function App() {
       )}
 
       {users.length > 0 && (
+        <p className="disclaimer">Showing the top 25 matching usernames.</p>
+      )}
+
+      {users.length > 0 && (
         <ul className="results">
           {users.map((user) => (
             <li key={user.id} className="card">

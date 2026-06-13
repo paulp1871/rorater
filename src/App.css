@@ -184,6 +184,12 @@
   color: var(--text);
 }
 
+.disclaimer {
+  font-size: 0.8rem;
+  color: var(--text-muted, #888);
+  margin-bottom: 0.5rem;
+}
+
 .results {
   list-style: none;
   padding: 0;
