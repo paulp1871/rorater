@@ -1,0 +1,18 @@
+/* Base app-shell layout shared across authenticated routes. */
+
+.page {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 48px 20px;
+  text-align: left;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.loading-screen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  color: var(--text);
+}

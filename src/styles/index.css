@@ -5,17 +5,17 @@
   --surface: #ffffff;
   --border: #e3e5e8;
   --code-bg: #f0f2f5;
-  --accent: #00a2ff;
-  --accent-h: #0086d6;
+  --accent: #1e72f0;
+  --accent-h: #155fc5;
   --accent-fg: #ffffff;
-  --accent-bg: rgba(0, 162, 255, 0.1);
-  --accent-border: rgba(0, 162, 255, 0.5);
+  --accent-bg: rgba(30, 114, 240, 0.1);
+  --accent-border: rgba(30, 114, 240, 0.5);
   --social-bg: rgba(240, 242, 245, 0.5);
   --shadow:
     rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
 
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --sans: 'Plus Jakarta Sans', system-ui, 'Segoe UI', Roboto, sans-serif;
+  --heading: 'Plus Jakarta Sans', system-ui, 'Segoe UI', Roboto, sans-serif;
   --mono: ui-monospace, Consolas, monospace;
 
   font: 18px/145% var(--sans);
@@ -34,11 +34,7 @@
 }
 
 #root {
-  width: 1126px;
-  max-width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  border-inline: 1px solid var(--border);
+  width: 100%;
   min-height: 100svh;
   display: flex;
   flex-direction: column;

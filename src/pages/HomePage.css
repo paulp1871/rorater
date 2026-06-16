@@ -1,0 +1,51 @@
+/* Home page */
+.home-page {
+  padding-top: 16px;
+}
+
+.home-title {
+  margin: 0 0 8px;
+}
+
+.home-sub {
+  color: var(--text);
+  margin: 12px 0 36px;
+}
+
+.home-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.home-action-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 20px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface);
+  color: var(--accent);
+  text-decoration: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.home-action-card:hover {
+  border-color: var(--accent-border);
+  box-shadow: var(--shadow);
+}
+
+.home-action-title {
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+.home-action-desc {
+  display: block;
+  font-size: 14px;
+  color: var(--text);
+  margin-top: 2px;
+}
