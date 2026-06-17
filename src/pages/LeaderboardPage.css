@@ -1,0 +1,61 @@
+.tagline {
+  margin-top: -16px;
+  margin-bottom: 28px;
+}
+
+.lb-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.lb-tab {
+  font: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s, background-color 0.15s;
+}
+
+.lb-tab:hover {
+  border-color: var(--accent-border);
+}
+
+.lb-tab.active {
+  color: var(--accent-fg);
+  background: var(--accent);
+  border-color: transparent;
+}
+
+.lb-tab:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.loading {
+  color: var(--text);
+}
+
+.error {
+  color: #e5484d;
+}
+
+.empty {
+  color: var(--text);
+}
+
+.lb-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* The row card styling lives with the component: src/components/LeaderboardCard.css */

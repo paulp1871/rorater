@@ -2,6 +2,7 @@ import { useState } from 'react'
 import type { FormEvent } from 'react'
 import { searchUsers } from '../api/users'
 import type { RobloxUser } from '../api/types'
+import UserCard from '../components/UserCard'
 import './SearchPage.css'
 
 type Status = 'idle' | 'loading' | 'done' | 'error'
@@ -55,30 +56,16 @@ function SearchPage() {
       )}
 
       {users.length > 0 && (
-        <p className="disclaimer">Showing the top 25 matching usernames.</p>
+        <p className="disclaimer">
+          Showing the top 25 matching usernames. Search results may be a few hours out of date.
+        </p>
       )}
 
       {users.length > 0 && (
         <ul className="results">
           {users.map((u) => (
-            <li key={u.id} className="card">
-              <img
-                className="avatar"
-                src={u.avatar?.url ?? ''}
-                alt={u.avatar?.url ? `${u.username} avatar` : ''}
-                data-empty={u.avatar?.url ? undefined : ''}
-              />
-              <div className="info">
-                <span className="name">
-                  {u.displayName}
-                  {u.hasVerifiedBadge && (
-                    <span className="badge" title="Verified">
-                      ✓
-                    </span>
-                  )}
-                </span>
-                <span className="username">@{u.username}</span>
-              </div>
+            <li key={u.id}>
+              <UserCard user={u} />
             </li>
           ))}
         </ul>

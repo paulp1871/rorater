@@ -1,29 +1,36 @@
-import { Outlet, Link, useLocation } from 'react-router-dom'
-import type { AuthUser } from '../api/types'
+import { Outlet, Link, useLocation, useNavigate } from 'react-router-dom'
+import { useAuth } from '../context/authContext'
 import './AppLayout.css'
 
-interface Props {
-  user: AuthUser | null
-  onLogout: () => void
-}
-
-function AppLayout({ user, onLogout }: Props) {
+function AppLayout() {
+  const { user, login, logout } = useAuth()
   const location = useLocation()
+  const navigate = useNavigate()
+
+  function guardedNav(path: string) {
+    if (!user) {
+      navigate('/?auth_required=1')
+    } else {
+      navigate(path)
+    }
+  }
 
   return (
     <main className="page">
       <header className="app-header">
-        <div className="app-user">
-          <img
-            className="app-avatar"
-            src={user?.avatarUrl ?? ''}
-            alt={user?.avatarUrl ? `${user.username ?? 'User'} avatar` : ''}
-            data-empty={user?.avatarUrl ? undefined : ''}
-          />
-          <span className="app-name">
-            {user?.displayName ?? user?.username ?? 'Signed in'}
-          </span>
-        </div>
+        {user && (
+          <div className="app-user">
+            <img
+              className="app-avatar"
+              src={user.avatarUrl ?? ''}
+              alt={user.avatarUrl ? `${user.username ?? 'User'} avatar` : ''}
+              data-empty={user.avatarUrl ? undefined : ''}
+            />
+            <span className="app-name">
+              {user.displayName ?? user.username ?? 'Signed in'}
+            </span>
+          </div>
+        )}
         <nav className="app-nav">
           <Link
             to="/"
@@ -31,16 +38,36 @@ function AppLayout({ user, onLogout }: Props) {
           >
             Home
           </Link>
-          <Link
-            to="/search"
+          <button
+            type="button"
             className={`app-nav-link${location.pathname === '/search' ? ' active' : ''}`}
+            onClick={() => guardedNav('/search')}
           >
             Search
+          </button>
+          <Link
+            to="/leaderboard"
+            className={`app-nav-link${location.pathname === '/leaderboard' ? ' active' : ''}`}
+          >
+            Leaderboard
           </Link>
+          <button
+            type="button"
+            className={`app-nav-link${location.pathname === '/profile' ? ' active' : ''}`}
+            onClick={() => guardedNav('/profile')}
+          >
+            Profile
+          </button>
         </nav>
-        <button type="button" className="logout-button" onClick={onLogout}>
-          Log out
-        </button>
+        {user ? (
+          <button type="button" className="logout-button" onClick={logout}>
+            Log out
+          </button>
+        ) : (
+          <button type="button" className="logout-button" onClick={login}>
+            Log in with ROBLOX
+          </button>
+        )}
       </header>
       <Outlet />
     </main>

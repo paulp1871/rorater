@@ -1,0 +1,53 @@
+.rating-control {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.star-row {
+  display: inline-flex;
+  gap: 4px;
+}
+
+.star {
+  border: none;
+  background: none;
+  padding: 0;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--border);
+  transition: color 0.1s ease;
+}
+
+.star[data-filled] {
+  color: var(--accent);
+}
+
+.star:disabled {
+  cursor: default;
+}
+
+.rating-control-meta {
+  font-size: 14px;
+  color: var(--text-muted, #888);
+}
+
+.remove-rating {
+  border: none;
+  background: none;
+  padding: 0;
+  font: inherit;
+  color: var(--accent);
+  cursor: pointer;
+}
+
+.remove-rating:hover:not(:disabled) {
+  text-decoration: underline;
+}
+
+.remove-rating:disabled {
+  cursor: default;
+  opacity: 0.6;
+}
