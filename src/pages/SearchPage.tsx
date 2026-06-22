@@ -16,7 +16,11 @@ function SearchPage() {
   async function handleSearch(event: FormEvent) {
     event.preventDefault()
     const trimmed = keyword.trim()
-    if (!trimmed) return
+    if (trimmed.length < 3) {
+      setError('Enter at least 3 characters to search.')
+      setStatus('error')
+      return
+    }
 
     setStatus('loading')
     setError('')
