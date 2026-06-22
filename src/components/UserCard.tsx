@@ -14,12 +14,17 @@ function UserCard({ user }: Props) {
 
   return (
     <Link to={`/users/${user.id}`} className="card">
-      <img
-        className="avatar"
-        src={user.avatar?.url ?? ''}
-        alt={user.avatar?.url ? `${user.username} avatar` : ''}
-        data-empty={user.avatar?.url ? undefined : ''}
-      />
+      <div className="avatar-wrap">
+        {user.avatar?.url ? (
+          <img
+            className="avatar"
+            src={user.avatar.url}
+            alt={`${user.username} avatar`}
+          />
+        ) : (
+          <span className="avatar-placeholder">?</span>
+        )}
+      </div>
       <div className="info">
         <span className="name">
           {user.displayName}

@@ -68,12 +68,17 @@ function UserProfile({ id }: Props) {
       {status === 'done' && profile && (
         <>
           <header className="profile-header">
-            <img
-              className="avatar avatar-lg"
-              src={profile.avatar?.url ?? ''}
-              alt={profile.avatar?.url ? `${profile.username} avatar` : ''}
-              data-empty={profile.avatar?.url ? undefined : ''}
-            />
+            <div className="avatar-wrap avatar-wrap-lg">
+              {profile.avatar?.url ? (
+                <img
+                  className="avatar avatar-lg"
+                  src={profile.avatar.url}
+                  alt={`${profile.username} avatar`}
+                />
+              ) : (
+                <span className="avatar-placeholder">?</span>
+              )}
+            </div>
             <div className="profile-id">
               <h1 className="display-name">
                 {profile.displayName}
