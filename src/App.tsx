@@ -8,6 +8,8 @@ import RequireAuth from './components/RequireAuth'
 import HomePage from './pages/HomePage'
 import SearchPage from './pages/SearchPage'
 import LeaderboardPage from './pages/LeaderboardPage'
+import TermsPage from './pages/TermsPage'
+import PrivacyPage from './pages/PrivacyPage'
 import './styles/base.css'
 
 // Lazy-loaded: these pages pull in Three.js (via UserProfile), which we keep out of
@@ -52,6 +54,8 @@ function App() {
         <Route element={<AppLayout />}>
           <Route path="/" element={<HomePage authError={authError} />} />
           <Route path="/leaderboard" element={<LeaderboardPage />} />
+          <Route path="/terms" element={<TermsPage />} />
+          <Route path="/privacy" element={<PrivacyPage />} />
           <Route element={<RequireAuth />}>
             <Route path="/search" element={<SearchPage />} />
             <Route

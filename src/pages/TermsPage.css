@@ -1,0 +1,43 @@
+.terms {
+  text-align: left;
+}
+
+.terms-effective {
+  color: var(--text);
+  font-size: 14px;
+  margin-top: -16px;
+  margin-bottom: 28px;
+}
+
+.terms-intro {
+  margin-bottom: 8px;
+}
+
+.terms-section {
+  margin-top: 28px;
+}
+
+.terms-section h2 {
+  margin-bottom: 10px;
+}
+
+.terms-section p + p {
+  margin-top: 12px;
+}
+
+.terms-section ul {
+  margin: 12px 0 0;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.terms a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.terms a:hover {
+  text-decoration: underline;
+}

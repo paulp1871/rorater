@@ -70,6 +70,14 @@ function AppLayout() {
         )}
       </header>
       <Outlet />
+      <footer className="app-footer">
+        <Link to="/terms" className="app-footer-link">
+          Terms of Service
+        </Link>
+        <Link to="/privacy" className="app-footer-link">
+          Privacy Policy
+        </Link>
+      </footer>
     </main>
   )
 }

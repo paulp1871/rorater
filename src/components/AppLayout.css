@@ -78,3 +78,25 @@
 .logout-button:hover {
   border-color: var(--accent-border);
 }
+
+/* Footer */
+.app-footer {
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.app-footer-link {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.app-footer-link:hover {
+  color: var(--accent);
+}
