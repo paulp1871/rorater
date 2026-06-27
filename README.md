@@ -6,9 +6,11 @@ rotatable 3D model), and rate them. Ratings feed two leaderboards: top-rated
 players over the last seven days and the most recently rated.
 
 This repository is the **frontend**. It talks to a companion Express backend
-(`rorater-api`) that owns Roblox OAuth, proxies Roblox's public APIs, and stores
-ratings. The split keeps all secrets and third-party calls server-side; the
-browser only ever talks to one origin.
+([`rorater-api`](#)) that owns Roblox OAuth, proxies Roblox's public APIs, and
+stores ratings. The split keeps all secrets and third-party calls server-side;
+the browser only ever talks to one origin.
+
+> **Backend repo:** _<https://github.com/paulp1871/rorater-api>_
 
 > **Note:** RoRater is an independent learning project and is not affiliated
 > with Roblox Corporation.
@@ -40,8 +42,6 @@ browser only ever talks to one origin.
   Roblox's third-party app policies.
 
 ## Architecture & engineering notes
-
-These are the decisions a reviewer might find worth a look:
 
 - **Single networking layer.** Every `fetch` lives in `src/api/` (`auth`,
   `users`, `ratings`, `leaderboard`) alongside the response types in `types.ts`,
