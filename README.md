@@ -10,10 +10,7 @@ This repository is the **frontend**. It talks to a companion Express backend
 stores ratings. The split keeps all secrets and third-party calls server-side;
 the browser only ever talks to one origin.
 
-> **Backend repo:** _<https://github.com/paulp1871/rorater-api>_
-
-> **Note:** RoRater is an independent learning project and is not affiliated
-> with Roblox Corporation.
+> **Note:** RoRater is an independent learning project and is not affiliated with Roblox Corporation.
 
 ## Tech stack
 
@@ -31,13 +28,21 @@ the browser only ever talks to one origin.
 
 - **Roblox OAuth login** — sign-in is delegated to the backend; the client
   checks session state on load and gates protected routes behind it.
+![ROBLOX OAuth Login](./media/media_1.png)
+
 - **User search** — look up Roblox players by username against the backend's
   search endpoint.
+![User Search](./media/media_2.png)
+
 - **Profile + 3D avatar** — view a player's avatar, the items they're currently
   wearing, and a rotatable 3D model rendered with Three.js.
 - **Rating** — submit, update, or remove a 1–N score for a player (idempotent
   upsert on the backend).
+![User Profile Page with 3D Avatar Viewer and Rating](./media/media_3.png)
+
 - **Leaderboards** — "Top Rated" (7-day window) and "Recently Rated" tabs.
+![Recently Rated Avatar Leaderboard](./media/media_4.png)
+
 - **Legal pages** — Terms of Service and Privacy Policy written against
   Roblox's third-party app policies.
 
