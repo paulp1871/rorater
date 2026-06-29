@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
 import { getUserProfile } from '../api/users'
 import type { RobloxUserProfile } from '../api/types'
 import { useAuth } from '../context/authContext'
@@ -58,10 +57,6 @@ function UserProfile({ id }: Props) {
 
   return (
     <div className="user-page">
-      <Link to="/search" className="back-link">
-        ← Back to search
-      </Link>
-
       {status === 'loading' && <p className="loading">Loading profile…</p>}
       {status === 'error' && <p className="error">{error}</p>}
 

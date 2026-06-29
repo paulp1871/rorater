@@ -1,5 +1,6 @@
 import { Outlet, Link, useLocation, useNavigate } from 'react-router-dom'
 import { useAuth } from '../context/authContext'
+import roraterLogo from '../assets/roblox_rr_logo_large.svg'
 import './AppLayout.css'
 
 function AppLayout() {
@@ -18,6 +19,7 @@ function AppLayout() {
   return (
     <main className="page">
       <header className="app-header">
+        <img src={roraterLogo} alt="Rorater" className="app-logo" />
         {user && (
           <div className="app-user">
             <img

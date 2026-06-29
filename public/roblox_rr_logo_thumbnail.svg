@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="96" viewBox="0 0 240 144" role="img" aria-label="RR logo">
+  <defs>
+    <linearGradient id="g" x1="18" x2="222" y1="12" y2="132" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ff3b30"/>
+      <stop offset="1" stop-color="#b00020"/>
+    </linearGradient>
+    <path id="r" fill-rule="evenodd" d="M0 120V0h68c23 0 38 15 38 38 0 18-9 31-27 38l29 44H72L49 80H31v40H0Zm31-92v29h33c8 0 13-6 13-15s-5-14-13-14H31Z"/>
+  </defs>
+  <g transform="translate(13 12) rotate(-4 53 60)">
+    <use href="#r" fill="#171717"/>
+    <use href="#r" fill="url(#g)" transform="translate(-4 -4)"/>
+  </g>
+  <g transform="translate(120 12) rotate(4 53 60)">
+    <use href="#r" fill="#171717"/>
+    <use href="#r" fill="url(#g)" transform="translate(-4 -4)"/>
+  </g>
+</svg>
