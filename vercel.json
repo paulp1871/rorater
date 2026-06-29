@@ -1,6 +1,10 @@
 {
   "rewrites": [
     {
+      "source": "/redirect",
+      "destination": "https://rorater.onrender.com/api/auth/roblox/callback"
+    },
+    {
       "source": "/api/:path*",
       "destination": "https://rorater.onrender.com/api/:path*"
     }
